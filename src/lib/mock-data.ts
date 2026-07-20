@@ -1,0 +1,82 @@
+import type { Produto } from "./types";
+
+export const mockProdutos: Produto[] = [
+  {
+    id: "1",
+    nome: "iPhone 14 128GB",
+    categoria: "Smartphones",
+    precoVenda: 4299.99,
+    quantidadeEstoque: 15,
+    descricao:
+      "iPhone 14 com tela Super Retina XDR de 6.1 polegadas, câmera dupla de 12MP, chip A15 Bionic e bateria de longa duração.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=iPhone+14",
+    especificacoes: { Tela: "6.1\"", Armazenamento: "128GB", RAM: "6GB", Bateria: "3279 mAh" },
+  },
+  {
+    id: "2",
+    nome: "Galaxy S24 256GB",
+    categoria: "Smartphones",
+    precoVenda: 4999.99,
+    quantidadeEstoque: 10,
+    descricao:
+      "Samsung Galaxy S24 com Snapdragon 8 Gen 3, câmera principal de 50MP e tela Dynamic AMOLED 2X de 6.2 polegadas.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Galaxy+S24",
+    especificacoes: { Tela: "6.2\"", Armazenamento: "256GB", RAM: "8GB", Câmera: "50MP" },
+  },
+  {
+    id: "3",
+    nome: "MacBook Pro 16 M3 Pro",
+    categoria: "Notebooks",
+    precoVenda: 15999.99,
+    quantidadeEstoque: 5,
+    descricao:
+      "MacBook Pro 16 polegadas com chip M3 Pro, tela Liquid Retina XDR, até 22 horas de bateria.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=MacBook+Pro",
+    especificacoes: { Tela: "16.2\"", Chip: "M3 Pro", RAM: "18GB", SSD: "512GB" },
+  },
+  {
+    id: "4",
+    nome: "AirPods Pro 2",
+    categoria: "Acessórios",
+    precoVenda: 1899.0,
+    quantidadeEstoque: 30,
+    descricao: "Cancelamento ativo de ruído, áudio espacial personalizado e case com MagSafe.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=AirPods+Pro",
+  },
+  {
+    id: "5",
+    nome: "Xiaomi Redmi Note 13",
+    categoria: "Smartphones",
+    precoVenda: 1799.0,
+    quantidadeEstoque: 22,
+    descricao: "Tela AMOLED 120Hz, câmera de 108MP e carregamento rápido de 33W.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Redmi+Note+13",
+  },
+  {
+    id: "6",
+    nome: "Carregador USB-C 20W",
+    categoria: "Acessórios",
+    precoVenda: 149.9,
+    quantidadeEstoque: 100,
+    descricao: "Carregador rápido USB-C 20W compatível com iPhone e dispositivos PD.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Carregador",
+  },
+  {
+    id: "7",
+    nome: "Notebook Lenovo IdeaPad 3",
+    categoria: "Notebooks",
+    precoVenda: 3499.0,
+    quantidadeEstoque: 8,
+    descricao: "Intel Core i5, 8GB RAM, SSD 256GB, tela 15.6\" Full HD.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Lenovo",
+  },
+  {
+    id: "8",
+    nome: "Película de Vidro 3D",
+    categoria: "Acessórios",
+    precoVenda: 49.9,
+    quantidadeEstoque: 200,
+    descricao: "Película de vidro temperado com cobertura total e aplicação sem bolhas.",
+    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Pelicula",
+  },
+];
