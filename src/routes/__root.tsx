@@ -13,6 +13,7 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/contexts/CartContext";
+import { ThemeProvider, useTheme } from "@/contexts/ThemeContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
@@ -69,17 +70,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eletrocel — Assistência Técnica e Loja de Celulares" },
+      { title: "Eletrocel — Loja e Assistência Técnica de Celulares em Curitiba" },
       {
         name: "description",
         content:
-          "Eletrocel: catálogo de smartphones, notebooks e acessórios, rastreio de ordens de serviço e assistência técnica em Curitiba.",
+          "Smartphones, notebooks e acessórios com ofertas exclusivas. Assistência técnica com rastreio de OS em tempo real. Curitiba/PR.",
       },
       { name: "author", content: "Eletrocel" },
-      { property: "og:title", content: "Eletrocel — Assistência Técnica e Loja" },
+      { property: "og:title", content: "Eletrocel — Loja e Assistência Técnica" },
       {
         property: "og:description",
-        content: "Compre smartphones, notebooks e acessórios. Rastreie sua OS em tempo real.",
+        content: "Ofertas, novidades e assistência técnica com garantia. Rastreie sua OS em tempo real.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -91,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
       },
     ],
   }),
@@ -101,11 +102,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const themeInitScript = `
+try {
+  var s = localStorage.getItem('eletrocel:theme');
+  var t = (s === 'light' || s === 'dark') ? s :
+    (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  if (t === 'dark') document.documentElement.classList.add('dark');
+} catch(e) { document.documentElement.classList.add('dark'); }
+`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
         {children}
@@ -115,21 +126,28 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function ToasterThemed() {
+  const { theme } = useTheme();
+  return <Toaster theme={theme} position="top-right" richColors />;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">
-            <Outlet />
-          </main>
-          <Footer />
-        </div>
-        <WhatsAppButton />
-        <Toaster theme="dark" position="top-right" richColors />
-      </CartProvider>
+      <ThemeProvider>
+        <CartProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">
+              <Outlet />
+            </main>
+            <Footer />
+          </div>
+          <WhatsAppButton />
+          <ToasterThemed />
+        </CartProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
