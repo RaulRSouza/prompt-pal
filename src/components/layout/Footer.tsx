@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "./Header";
 
 export function Footer() {
   return (
@@ -10,6 +11,14 @@ export function Footer() {
           <p className="mt-2 text-sm text-muted-foreground">
             Cuidando do seu celular com excelência desde sempre.
           </p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/60 px-3 py-2 text-xs font-medium transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            <Instagram className="h-4 w-4" /> {INSTAGRAM_HANDLE}
+          </a>
         </div>
         <div>
           <div className="mb-3 text-sm font-semibold">Navegação</div>

@@ -50,11 +50,11 @@ function ProdutoPage() {
       </Link>
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <div className="card-glass overflow-hidden rounded-2xl">
+        <div className="product-plate overflow-hidden rounded-3xl border border-border">
           <img
-            src={produto.imagemUrl ?? "https://placehold.co/800x800/1a1a1a/FBBF24?text=Produto"}
+            src={produto.imagemUrl}
             alt={produto.nome}
-            className="aspect-square w-full object-cover"
+            className="aspect-square w-full object-contain p-10"
           />
         </div>
 

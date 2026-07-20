@@ -1,4 +1,12 @@
 import type { Produto } from "./types";
+import iphone14 from "@/assets/produtos/iphone-14.jpg";
+import galaxyS24 from "@/assets/produtos/galaxy-s24.jpg";
+import macbookPro from "@/assets/produtos/macbook-pro.jpg";
+import airpodsPro from "@/assets/produtos/airpods-pro.jpg";
+import redmiNote from "@/assets/produtos/redmi-note.jpg";
+import carregadorUsbc from "@/assets/produtos/carregador-usbc.jpg";
+import lenovoIdeapad from "@/assets/produtos/lenovo-ideapad.jpg";
+import peliculaVidro from "@/assets/produtos/pelicula-vidro.jpg";
 
 export const mockProdutos: Produto[] = [
   {
@@ -6,11 +14,13 @@ export const mockProdutos: Produto[] = [
     nome: "iPhone 14 128GB",
     categoria: "Smartphones",
     precoVenda: 4299.99,
+    precoOriginal: 4899.99,
     quantidadeEstoque: 15,
     descricao:
       "iPhone 14 com tela Super Retina XDR de 6.1 polegadas, câmera dupla de 12MP, chip A15 Bionic e bateria de longa duração.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=iPhone+14",
+    imagemUrl: iphone14,
     especificacoes: { Tela: "6.1\"", Armazenamento: "128GB", RAM: "6GB", Bateria: "3279 mAh" },
+    tags: ["oferta", "maisVendido"],
   },
   {
     id: "2",
@@ -20,28 +30,33 @@ export const mockProdutos: Produto[] = [
     quantidadeEstoque: 10,
     descricao:
       "Samsung Galaxy S24 com Snapdragon 8 Gen 3, câmera principal de 50MP e tela Dynamic AMOLED 2X de 6.2 polegadas.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Galaxy+S24",
+    imagemUrl: galaxyS24,
     especificacoes: { Tela: "6.2\"", Armazenamento: "256GB", RAM: "8GB", Câmera: "50MP" },
+    tags: ["emAlta", "novidade"],
   },
   {
     id: "3",
     nome: "MacBook Pro 16 M3 Pro",
     categoria: "Notebooks",
     precoVenda: 15999.99,
+    precoOriginal: 17999.99,
     quantidadeEstoque: 5,
     descricao:
       "MacBook Pro 16 polegadas com chip M3 Pro, tela Liquid Retina XDR, até 22 horas de bateria.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=MacBook+Pro",
+    imagemUrl: macbookPro,
     especificacoes: { Tela: "16.2\"", Chip: "M3 Pro", RAM: "18GB", SSD: "512GB" },
+    tags: ["oferta"],
   },
   {
     id: "4",
     nome: "AirPods Pro 2",
     categoria: "Acessórios",
     precoVenda: 1899.0,
+    precoOriginal: 2299.0,
     quantidadeEstoque: 30,
     descricao: "Cancelamento ativo de ruído, áudio espacial personalizado e case com MagSafe.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=AirPods+Pro",
+    imagemUrl: airpodsPro,
+    tags: ["oferta", "emAlta"],
   },
   {
     id: "5",
@@ -50,16 +65,19 @@ export const mockProdutos: Produto[] = [
     precoVenda: 1799.0,
     quantidadeEstoque: 22,
     descricao: "Tela AMOLED 120Hz, câmera de 108MP e carregamento rápido de 33W.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Redmi+Note+13",
+    imagemUrl: redmiNote,
+    tags: ["emAlta", "maisVendido"],
   },
   {
     id: "6",
     nome: "Carregador USB-C 20W",
     categoria: "Acessórios",
     precoVenda: 149.9,
+    precoOriginal: 199.9,
     quantidadeEstoque: 100,
     descricao: "Carregador rápido USB-C 20W compatível com iPhone e dispositivos PD.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Carregador",
+    imagemUrl: carregadorUsbc,
+    tags: ["oferta"],
   },
   {
     id: "7",
@@ -68,7 +86,8 @@ export const mockProdutos: Produto[] = [
     precoVenda: 3499.0,
     quantidadeEstoque: 8,
     descricao: "Intel Core i5, 8GB RAM, SSD 256GB, tela 15.6\" Full HD.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Lenovo",
+    imagemUrl: lenovoIdeapad,
+    tags: ["novidade"],
   },
   {
     id: "8",
@@ -77,6 +96,7 @@ export const mockProdutos: Produto[] = [
     precoVenda: 49.9,
     quantidadeEstoque: 200,
     descricao: "Película de vidro temperado com cobertura total e aplicação sem bolhas.",
-    imagemUrl: "https://placehold.co/600x600/1a1a1a/FBBF24?text=Pelicula",
+    imagemUrl: peliculaVidro,
+    tags: ["maisVendido"],
   },
 ];
