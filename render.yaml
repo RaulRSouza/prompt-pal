@@ -1,0 +1,11 @@
+# Render Blueprint — Storefront (TanStack Start SSR, Nitro node-server)
+services:
+  - type: web
+    name: eletrocel-storefront
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node .output/server/index.mjs
+    envVars:
+      - key: VITE_ERP_URL
+        sync: false # URL pública do backend (lida no build)
